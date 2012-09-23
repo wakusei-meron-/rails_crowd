@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Category:</b>
+  <%= @job.category %>
+</p>
+
+<p>
+  <b>Demand tequnique:</b>
+  <%= @job.demand_tequnique %>
+</p>
+
+<p>
+  <b>Difficulty:</b>
+  <%= @job.difficulty %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @job.title %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @job.company %>
+</p>
+
+<p>
+  <b>Job detail:</b>
+  <%= @job.job_detail %>
+</p>
+
+<p>
+  <b>Apply limit:</b>
+  <%= @job.apply_limit %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
