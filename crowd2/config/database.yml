@@ -16,6 +16,7 @@ development:
   pool: 5
   username: ishibashi_001
   password: dO51yISd
+  #socket: /var/lib/mysql/mysql.sock
   socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -29,6 +30,7 @@ test:
   pool: 5
   username: ishibashi_001
   password: dO51yISd
+  #socket: /var/lib/mysql/mysql.sock
   socket: /tmp/mysql.sock
 
 production:
@@ -39,4 +41,5 @@ production:
   pool: 5
   username: ishibashi_001
   password: dO51yISd
+  #socket: /var/lib/mysql/mysql.sock
   socket: /tmp/mysql.sock
