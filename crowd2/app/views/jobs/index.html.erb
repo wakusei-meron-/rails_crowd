@@ -45,8 +45,12 @@
     <td><%= job.job_detail %></td>
     <td><%= job.apply_limit %></td>
     <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+    <% if user_signed_in? && job.user_id == current_user.id -%>
+      <td><%= link_to 'Edit', edit_job_path(job) %></td>
+      <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>  
+    <% end -%>
+   
   </tr>
 <% end %>
 </table>

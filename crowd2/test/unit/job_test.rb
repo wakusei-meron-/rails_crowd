@@ -3,7 +3,9 @@
 # Table name: jobs
 #
 #  id               :integer          not null, primary key
-#  category         :string(255)
+#  idea             :boolean
+#  create_plan      :boolean
+#  other            :boolean
 #  demand_tequnique :string(255)
 #  difficulty       :integer
 #  title            :string(255)
@@ -12,6 +14,7 @@
 #  apply_limit      :date
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  user_id          :integer
 #
 
 require 'test_helper'

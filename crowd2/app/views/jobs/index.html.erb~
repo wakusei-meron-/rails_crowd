@@ -18,16 +18,16 @@
 <% @jobs.each do |job| %>
   <tr>
     <td>
-      <%#= job.category %>	
-
-      <% if true %>
-	カテゴリーがありません
-	<% if job.category_names.any? -%>
-	  
-	<% end -%>
-
-      <% end %>
-
+      <%#= job.category %>
+      <% if job.idea == true -%>
+	<li>企画・アイディア</li>
+      <% end -%>
+      <% if job.create_plan == true -%>
+	<li>開発</li>
+      <% end -%>
+      <% if job.other == true -%>
+	<li>その他</li>
+      <% end -%>
 
     </td>
     <td><%= job.demand_tequnique %></td>
@@ -45,6 +45,7 @@
     <td><%= job.job_detail %></td>
     <td><%= job.apply_limit %></td>
     <td><%= link_to 'Show', job %></td>
+    
     <td><%= link_to 'Edit', edit_job_path(job) %></td>
     <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
@@ -52,3 +53,7 @@
 </table>
 
 <br />
+
+<style>
+  .job_shikaku{border: 1px solid #C0C0C0;}
+</style>
