@@ -3,32 +3,24 @@
     <div id="error_explanation">
       <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
 
+      <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
     </div>
   <% end %>
 
   <div class="field">
     <%= f.label :カテゴリー %><br />
     <%#= f.text_field :category %>
-    <div class="cate_1">
-      <%= f.check_box :idea,{:class => 'chk'}, '1', '0' %>
-      <%= f.label :企画・アイディア %>
-    </div>
-
-    <div class="cate_2">
-      <%= f.check_box :create_plan,{:class => 'chk'}, true, false %>
-      <%= f.label :開発 %>
-    </div>
-    <div class="cate_3">
-      <%= f.check_box :other,{:class => 'chk'}, true, false %>
-      <%= f.label :その他 %>
-    </div>
-        <% if false %>
-    <%#= f.label :要件定義 %>
-    <%#= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
-    <%#= f.label :デザイン・UI %>
-    <%#= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
-    <% end %>
-    <% if false %>
+    <%= f.label :企画・アイディア %>
+    <%= f.check_box :category,{:class => 'chk'}, 'yse', 'no' %>
+    <%= f.label :要件定義 %>
+    <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
+    <%= f.label :デザイン・UI %>
+    <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
+    
     <!--    <%= f.label "UX" %>
     <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
     <%= f.label :ライティング %>
@@ -48,7 +40,6 @@
     <%= f.label :ビジネス・その他 %>
     <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
    -->
-    <% end %>
 
 
 

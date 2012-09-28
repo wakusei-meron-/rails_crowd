@@ -14,7 +14,9 @@
 ActiveRecord::Schema.define(:version => 20120919130406) do
 
   create_table "jobs", :force => true do |t|
-    t.string   "category"
+    t.boolean  "idea"
+    t.boolean  "create_plan"
+    t.boolean  "other"
     t.string   "demand_tequnique"
     t.integer  "difficulty"
     t.string   "title"

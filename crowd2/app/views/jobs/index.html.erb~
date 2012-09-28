@@ -18,16 +18,16 @@
 <% @jobs.each do |job| %>
   <tr>
     <td>
-      <%#= job.category %>
-      <% if job.idea == true -%>
-	<li>企画・アイディア</li>
-      <% end -%>
-      <% if job.create_plan == true -%>
-	<li>開発</li>
-      <% end -%>
-      <% if job.other == true -%>
-	<li>その他</li>
-      <% end -%>
+      <%#= job.category %>	
+
+      <% if true %>
+	カテゴリーがありません
+	<% if job.category_names.any? -%>
+	  
+	<% end -%>
+
+      <% end %>
+
 
     </td>
     <td><%= job.demand_tequnique %></td>
@@ -52,7 +52,3 @@
 </table>
 
 <br />
-
-<style>
-  .job_shikaku{border: 1px solid #C0C0C0;}
-</style>

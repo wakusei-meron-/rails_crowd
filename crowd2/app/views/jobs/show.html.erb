@@ -1,37 +1,47 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%#= notice %></p>
 
 <p>
-  <b>Category:</b>
-  <%= @job.category %>
+  <b>カテゴリー:</b>
+  <% if @job.idea == true -%>
+    <li>企画・アイディア</li>
+  <% end -%>
+  <% if @job.create_plan == true -%>
+    <li>開発</li>
+  <% end -%>
+  <% if @job.other == true -%>
+    <li>その他</li>
+  <% end -%>
+
+  <%#= @job.category %>
 </p>
 
 <p>
-  <b>Demand tequnique:</b>
+  <b>必要なスキル:</b>
   <%= @job.demand_tequnique %>
 </p>
 
 <p>
-  <b>Difficulty:</b>
+  <b>難しさ:</b>
   <%= @job.difficulty %>
 </p>
 
 <p>
-  <b>Title:</b>
+  <b>案件名:</b>
   <%= @job.title %>
 </p>
 
 <p>
-  <b>Company:</b>
+  <b>会社の名前:</b>
   <%= @job.company %>
 </p>
 
 <p>
-  <b>Job detail:</b>
+  <b>詳細:</b>
   <%= @job.job_detail %>
 </p>
 
 <p>
-  <b>Apply limit:</b>
+  <b>募集期限:</b>
   <%= @job.apply_limit %>
 </p>
 

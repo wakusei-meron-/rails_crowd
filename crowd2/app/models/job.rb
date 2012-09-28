@@ -15,5 +15,7 @@
 #
 
 class Job < ActiveRecord::Base
-  attr_accessible :apply_limit, :category, :company, :demand_tequnique, :difficulty, :job_detail, :title
+  attr_accessible :apply_limit, :idea, :create_plan, :other, :company, :demand_tequnique, :difficulty, :job_detail, :title
+  
+  has_many :category_names
 end

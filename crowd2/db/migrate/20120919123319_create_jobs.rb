@@ -1,7 +1,14 @@
 class CreateJobs < ActiveRecord::Migration
   def change
     create_table :jobs do |t|
-      t.string :category
+      #t.string :category
+      t.boolean :idea
+      t.boolean :create_plan
+      t.boolean :other
+      #t.boolean :plan_define
+      #t.boolean :design_ui
+      
+
       t.string :demand_tequnique
       t.integer :difficulty
       t.string :title
