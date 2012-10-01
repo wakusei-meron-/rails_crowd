@@ -21,6 +21,7 @@ class Job < ActiveRecord::Base
   attr_accessible :apply_limit, :idea, :create_plan, :other, :company, :demand_tequnique, :difficulty, :job_detail, :title, :user_id
   
   validates :user_id, :presence => true
+  validates :title, :presence => true
 
   belongs_to :user
 end

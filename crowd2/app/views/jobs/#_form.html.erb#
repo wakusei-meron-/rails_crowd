@@ -1,0 +1,89 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :カテゴリー %><br />
+    <%#= f.text_field :category %>
+    <div class="cate_1">
+      <%= f.check_box :idea,{:class => 'chk'}, '1', '0' %>
+      <%= f.label :企画・アイディア %>
+    </div>
+
+    <div class="cate_2">
+      <%= f.check_box :create_plan,{:class => 'chk'}, true, false %>
+      <%= f.label :開発 %>
+    </div>
+    <div class="cate_3">
+      <%= f.check_box :other,{:class => 'chk'}, true, false %>
+      <%= f.label :その他 %>
+    </div>
+        <% if false %>
+    <%#= f.label :要件定義 %>
+    <%#= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
+    <%#= f.label :デザイン・UI %>
+    <%#= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
+    <% end %>
+    <% if false %>
+    <!--    <%= f.label "UX" %>
+    <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
+    <%= f.label :ライティング %>
+    <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
+    <%= f.label :翻訳 %>
+    <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %><br />
+    <%= f.label :開発 %>
+    <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
+    <%= f.label :テスト %>
+    <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
+    <%= f.label :コンサルティング %>
+    <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
+    <%= f.label :カスタマーサポート %>
+    <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
+    <%= f.label :タスク・作業 %>
+    <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
+    <%= f.label :ビジネス・その他 %>
+    <%= f.check_box :category, {:class => 'chk'},"yes", 'no' %>
+   -->
+    <% end %>
+
+
+
+  </div>
+  <div class="field">
+    <%= f.label :求める能力 %><br />
+    <%= f.text_field :demand_tequnique %>
+  </div>
+
+  
+<%# 難しさを選択式に変える -%>
+  <div class="field">
+    <%= f.label :難しさ %><br />
+    <%= f.number_field :difficulty %>
+  </div>
+  <div class="field">
+    <%= f.label :案件名 %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :会社名 %><br />
+    <%= f.text_field :company %>
+  </div>
+  <div class="field">
+    <%= f.label :詳細 %><br />
+    <%= f.text_area :job_detail %>
+  </div>
+  <div class="field">
+    <%= f.label :応募期限 %><br />
+    <%= f.date_select :apply_limit %>
+  </div>
+  <%= f.hidden_field :user_id,
+      { :value => current_user.id } %>  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

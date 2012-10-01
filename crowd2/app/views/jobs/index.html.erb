@@ -3,10 +3,10 @@
 
 <table>
   <tr>
+    <th>案件名</th>
     <th>カテゴリー</th>
     <th>必要なスキル</th>
     <th>難しさ</th>
-    <th>案件名</th>
     <th>会社</th>
     <th>詳細</th>
     <th>募集期限</th>
@@ -17,6 +17,8 @@
 
 <% @jobs.each do |job| %>
   <tr>
+    <!--<td><%= job.title %></td>-->
+    <td><h1><%= link_to job.title, job %></h1></td>
     <td>
       <%#= job.category %>
       <% if job.idea == true -%>
@@ -40,7 +42,6 @@
 
       <%#= job.difficulty %>
     </td>
-    <td><%= job.title %></td>
     <td><%= job.company %></td>
     <td><%= job.job_detail %></td>
     <td><%= job.apply_limit %></td>
